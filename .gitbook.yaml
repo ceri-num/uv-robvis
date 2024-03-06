@@ -4,6 +4,9 @@ structure:
   readme: README.md
   summary: SUMMARY.md
   tp1-ur5: TP1-UR5.md
+  tp2-kuka: TP2-kuka.md
+  tp3-kuka_iiwa: TP3-kuka_iiwa.md
+  tp4-ABB_YUMI: TP1-ABB_YUMI.md
 
 redirects:
   previous/page: new-folder/page.md
