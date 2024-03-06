@@ -3,6 +3,7 @@ root: ./
 structure:
   readme: README.md
   summary: SUMMARY.md
+  tp1-ur5: TP-UR5.md
 
 redirects:
   previous/page: new-folder/page.md
