@@ -21,4 +21,8 @@ Deduire l'algorithme qui permet de faire la meme operation connaissant les point
 5.  Ecrire le programme correspondant au robot de prendre les pieces sur le convoyeur et les poser sur la pallette sur deux niveaux
  Deduire l'algorithme qui permet de faire la meme operation connaissant les points seulement les positions P0 et P1
 6.  Deduire l'algorithme qui permet de faire la meme operation  connaissant les points seulement les positions P0 et P1 et les dimentions de la pallette NxMxH
-7.  On souhaite disposer les pieces sur les palette selon les couleurs, chauqe niveau corrrspont à une couleur precise 
+7.  On souhaite disposer les pieces sur les palette selon les couleurs, chauqe niveau corrrspont à une couleur bien precise:
+Jaune-vert-bleu
+Bleu-Jaune-vert
+Vert-bleu-jaune 
+9.  
