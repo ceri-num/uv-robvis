@@ -20,7 +20,7 @@ Dans l'espace de travail de ROS2 est doté des noeuds:
 - robot: contient l'excutable de la base de données et le programme robot.
   
 ## Configuration
-Ouvrir trois terminaux:
+Ouvrir les terminaux:
 - terminal 1
 ```python
 cd ~/Ros_ws
@@ -44,6 +44,7 @@ ros2 launch service add_color_check.launch.py
 ```
 
 - terminal 2
+  
   Faire les memes procedures
 service client
 ```python
@@ -61,7 +62,7 @@ Avant d'executer un code modifier, il faut reconstruire le package par:
 colcon build --packages-select robot
 ```
 
-terminal 5
+- terminal 5
 Passer en mode admin pour executer votre code
 Mode admin
 ```python
