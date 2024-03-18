@@ -3,6 +3,42 @@
 
 
 ## Materiels
+Les materiels à votre disposition sont:
+- robot kuka R650 avec une pince
+- kit vision composé d'une realsense D435i 
+- PC vision où seront lancer les noeuds de camera realsense
+- PC fixe pour la programmeation en python sous vscode
+- les cubes de differentes couleurs: jaune, vert, bleu et rouge
+- les Palettes A, B et C
+
+## Logiciel
+Le robot communique avec le PC fixe en liaison serie. Un environnement ROS2 est concu pour la programmation du robot en python avec un environnement virtuel
+Dans l'espace de travail de ROS2 est doté des noeuds:
+- ros2_aruco : permet de lancer noeud de lecture d'aruco code
+- ros2_interfaces: contenant les interfaces message
+- service: permet de lancer un service de detection de couleur à partir de l'id de l'aruco_code
+- robot: contient l'excutable de la base de données et le programme robot.
+  
+## Configuration
+terminal vscode
+colcon build --packages-select robot
+terminal 1 
+(venv) robot@PC-41496:~/Ros_ws$ 
+. install/setup.bash
+ros2 run service db.py
+
+terminal 2
+Passer en mode adm su
+(venv) root@PC-41496:/home/robot/Ros_ws#
+. install/setup.bash
+ros2 run robot kuka.py 
+
+Les packages
+
+ros2_aruco 
+ros2_interfaces
+service
+robot
 
 
 
