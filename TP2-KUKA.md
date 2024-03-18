@@ -22,7 +22,13 @@ Dans l'espace de travail de ROS2 est doté des noeuds:
 ## Configuration
 Ouvrir trois terminaux:
 - terminal 1
-  `````
+```python
+cd ~/Ros_ws
+```
+
+```python
+source install/setup.bash
+```
   
 terminal vscode
 colcon build --packages-select robot
