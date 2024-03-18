@@ -12,7 +12,7 @@ Les materiels à votre disposition sont:
 - les Palettes A, B et C
 
 ## Logiciel
-Le robot communique avec le PC fixe en liaison serie. Un environnement ROS2 est concu pour la programmation du robot en python avec un environnement virtuel
+Le robot communique avec le PC fixe en liaison serie. Un environnement ROS2 est conçu pour la programmation du robot en python avec un environnement virtuel
 Dans l'espace de travail de ROS2 est doté des noeuds:
 - ros2_aruco : permet de lancer noeud de lecture d'aruco code
 - ros2_interfaces: contenant les interfaces message
@@ -76,11 +76,29 @@ lancer votre noeud
 ros2 run robot kuka.py 
 ```
 ## Prise en main
-kuka: dispose des fonctions principales suivant: 
+kuka: dispose des fonctions principales suivants: 
 
 
 ### Tester votre premier programme en python
+```
+#!/usr/bin/env python3
+from pykuka.pykuka import Pose
+import pykuka.pykuka as kuka
+import pykuka.transformations as tf
+import time
+import serial as s
+import database as database
 
+kuka.initialize("/dev/ttyS0")
+base= {"base":"Base","BaseBleu":"BaseBleu","BaseRouge":"BaseRouge","BaseGrise":"BaseGrise","BaseVert":"BaseVert"}
+db = database.Database(filename = 'data.db', table = 'PIECE')
+pose = {"id": 3, "couleur":"rouge", "x":6.0, "y": 9.0, "z": 1.0, "a":2.0 , "b":0.0, "c": 0.0, "longueur":0.0, "largeur": 0.0, "hauteur":0.0, "poste":0.0, "frame":"BaseBleu", "rapport":"none"}
+# db.updateAll(9,pose)
+db.record_data(pose)
+pos=db.readColor(3)
+print(db.readIDColor(3))
+
+```
 ## Depalcement 
 
 ## Travail à faire
