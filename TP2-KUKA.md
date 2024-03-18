@@ -20,6 +20,10 @@ Dans l'espace de travail de ROS2 est doté des noeuds:
 - robot: contient l'excutable de la base de données et le programme robot.
   
 ## Configuration
+Ouvrir trois terminaux:
+- terminal 1
+  `````
+  
 terminal vscode
 colcon build --packages-select robot
 terminal 1 
