@@ -75,6 +75,13 @@ lancer votre noeud
 ```python
 ros2 run robot kuka.py 
 ```
+## Prise en main
+kuka: dispose des fonctions principales suivant: 
+
+
+### Tester votre premier programme en python
+
+## Depalcement 
 
 ## Travail à faire
 
