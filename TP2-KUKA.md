@@ -54,27 +54,26 @@ Lancer le noeud aruco
 ```python
 ros2 launch ros2_aruco aruco_recognition.launch.py 
 ```
-terminal vscode
+- terminal 4 : vscode
+
+Avant d'executer un code modifier, il faut reconstruire le package par:
+```python
 colcon build --packages-select robot
-terminal 1 
-(venv) robot@PC-41496:~/Ros_ws$ 
-. install/setup.bash
-ros2 run service db.py
+```
 
-terminal 2
-Passer en mode adm su
+terminal 5
+Passer en mode admin pour executer votre code
+Mode admin
+```python
 (venv) root@PC-41496:/home/robot/Ros_ws#
-. install/setup.bash
+```
+```python
+source install/setup.bash
+```
+lancer votre noeud
+```python
 ros2 run robot kuka.py 
-
-Les packages
-
-ros2_aruco 
-ros2_interfaces
-service
-robot
-
-
+```
 
 ## Travail à faire
 
