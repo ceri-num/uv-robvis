@@ -17,7 +17,9 @@ soient Dx,DY et DZ la distances entre les positions suivant respectivement les a
   Ecrire un programme correspondant au robot de prendre les pieces sur le convoyeur et les poser sur les pallette A
 Deduire l'algorithme qui permet de faire la meme operation connaissant les points seulement les positions P0 et P1
 
-![Pallete Jaune](./Imgs/J1.jpeg)
+
+![Pallete Jaune](./Imgs/J1.jpeg)  ![Pallete Jaune](./Imgs/Jaune.jpeg)
+
    
 3. Ecrire le programme correspondant au robot de prendre les pieces sur le convoyeur et les poser sur la pallette sur deux niveaux
  Deduire l'algorithme qui permet de faire la meme operation connaissant les points seulement les positions P0 et P1
