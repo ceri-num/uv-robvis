@@ -97,7 +97,12 @@ pose = {"id": 3, "couleur":"rouge", "x":6.0, "y": 9.0, "z": 1.0, "a":2.0 , "b":0
 db.record_data(pose)
 pos=db.readColor(3)
 print(db.readIDColor(3))
-
+# deplaclent relatif sur l'axe x
+kuka.move_linRel(10.0,0.0,0.0,0.0,0.0,0.0)
+# Ouvrir la pince 
+kuka.open_tool()
+# Fermer la pince 
+kuka.close_tool()
 ```
 ## Depalcement 
 
