@@ -29,10 +29,12 @@ Ouvrir les terminaux:
           cd ~/Ros_ws
           ```
           2. Sourcer votre environnement:
+  
           ```python
           source install/setup.bash
           ```
-          3. Lancement du noeud de la camera realsense 
+          3. Lancement du noeud de la camera realsense
+  
           ```python
           ros2 launch realsense2_camera rs_launch.py
           ```
