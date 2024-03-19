@@ -25,6 +25,7 @@ Ouvrir les terminaux:
 ### PC portable
 - terminal 1:
           1. aller dans workspace
+  
           ```python
           cd ~/Ros_ws
           ```
