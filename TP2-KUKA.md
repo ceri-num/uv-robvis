@@ -199,7 +199,8 @@ Deduire l'algorithme qui permet de faire la meme operation connaissant les point
 ![Palletes_ABC](./Imgs/Niv1_ABC.jpeg)
 
 
-![Camera](./Imgs/camera_piece.jpeg)![Camera](./Imgs/camera.jpeg)
+!!![Camera](./Imgs/camera_piece.jpeg)
+![Camera](./Imgs/camera.jpeg)
    
 3. Ecrire le programme correspondant au robot de prendre les pieces sur le convoyeur et les poser sur la pallette sur deux niveaux
  Deduire l'algorithme qui permet de faire la meme operation connaissant les points seulement les positions P0 et P1
