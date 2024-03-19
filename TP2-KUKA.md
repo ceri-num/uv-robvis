@@ -98,6 +98,7 @@ Ouvrir les terminaux:
     source install/setup.bash
     ```
     Cette partie est resevée uniquement si vous voulez lancer votre programme
+  
     3. lancer votre noeud : TP_nom_groupe
        exemple: TP_2 => groupe2
     ```python
