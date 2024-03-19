@@ -86,7 +86,7 @@ Ouvrir les terminaux:
     colcon build --packages-select robot
     ```
     
-    - terminal 3:
+- terminal 3:
     Passer en mode admin pour executer votre code
     Mode admin
     1. activer votre envrionnement virtuel
