@@ -61,21 +61,22 @@ Ouvrir les terminaux:
 
 ### PC fixe
 - terminal 1 :
-            1. aller dans workspace
-            ```python
-            cd ~/Ros_ws
-            ```
-            2. Activation de l'environnement virtuel 
-            ```python
-            source ./venv/bin/activate
-            ```
-            En sortie vous aurez:
-            ```python
-            (venv) robot@PC-41496:~/Ros_ws$ 
-            ```
-            3. Sourcer votre environnement:
-            ```python
-            source install/setup.bash
+    1. aller dans workspace
+       
+    ```python
+    cd ~/Ros_ws
+    ```
+    2. Activation de l'environnement virtuel 
+    ```python
+    source ./venv/bin/activate
+    ```
+    En sortie vous aurez:
+    ```python
+    (venv) robot@PC-41496:~/Ros_ws$ 
+    ```
+    3. Sourcer votre environnement:
+    ```python
+    source install/setup.bash
             ```
 
 - terminal 2 : vscode
