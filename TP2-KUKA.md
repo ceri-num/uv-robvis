@@ -117,6 +117,20 @@ import pykuka.transformations as tf
 import time                           # 
 import database as database           #
 
+# variable Pose
+
+pose=Pose( 0.0,  0.0,  0.0,   0.0,   0.0, 0.0)
+#position X, Y, Z
+pose.x = 4.99
+pose.y = 305.52
+pose.z = 552.88
+# orientation A, B, C
+pose.a= 89.62
+pose.b = 1.39
+pose.c = -179.54
+
+
+
 # initialisation et connexion au robot 
 kuka.initialize("/dev/ttyS0")
 # mouvement relatif lineaire de 10.0 mm sur l'axe x
@@ -137,10 +151,16 @@ time.sleep(1)
 # Fermer la pince 
 kuka.close_tool()
 
-# depalcement PTP
+# depalcement PTP à une position donnée pose
+# ATTENTION LE ROBOT VA SE DEPLACER A LA POSTION DONNEE****************************************************
+kuka.move_to_pose(pose)                                #***************************************************
+# ATTENTION LE ROBOT VA SE DEPLACER A LA POSTION DONNEE****************************************************
+
+```
 
 
 
+```
 base= {"base":"Base","BaseBleu":"BaseBleu","BaseRouge":"BaseRouge","BaseGrise":"BaseGrise","BaseVert":"BaseVert"}
 db = database.Database(filename = 'data.db', table = 'PIECE')
 pose = {"id": 3, "couleur":"rouge", "x":6.0, "y": 9.0, "z": 1.0, "a":2.0 , "b":0.0, "c": 0.0, "longueur":0.0, "largeur": 0.0, "hauteur":0.0, "poste":0.0, "frame":"BaseBleu", "rapport":"none"}
