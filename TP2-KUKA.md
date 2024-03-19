@@ -153,12 +153,14 @@ kuka.close_tool()
 
 # depalcement PTP à une position donnée pose
 # ATTENTION LE ROBOT VA SE DEPLACER A LA POSTION DONNEE****************************************************
+
 kuka.move_to_pose(pose)                                #***************************************************
+
 # ATTENTION LE ROBOT VA SE DEPLACER A LA POSTION DONNEE****************************************************
 
 ```
 
-
+Option Base de donnée 
 
 ```
 base= {"base":"Base","BaseBleu":"BaseBleu","BaseRouge":"BaseRouge","BaseGrise":"BaseGrise","BaseVert":"BaseVert"}
@@ -175,11 +177,13 @@ kuka.open_tool()
 # Fermer la pince 
 kuka.close_tool()
 ```
+Option Subscriber ROS2
+
 ## Depalcement 
 
 ## Travail à faire
 
-scenarios 
+Scenarios 
 Soint les points Pi(0<i<N) de la Pallette, P0 le point de depart, pPrise position de prise, pPose la position de depose, pAvant,pApres les position respectivment 
 avant et apres la prise de piece sur le convoyeurs, pa les positions d'approche, px les positions de depose de pieces sur la palette,
 soient Dx,DY et DZ la distances entre les positions suivant respectivement les axes x,y et z
