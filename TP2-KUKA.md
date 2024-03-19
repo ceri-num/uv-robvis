@@ -81,28 +81,28 @@ Ouvrir les terminaux:
 
 - terminal 2 : vscode
 
-            Avant d'executer un code modifier, il faut reconstruire le package par:
-            ```python
-            colcon build --packages-select robot
-            ```
-            
-            - terminal 3:
-            Passer en mode admin pour executer votre code
-            Mode admin
-            1. activer votre envrionnement virtuel
-            ```python
-            (venv) root@PC-41496:/home/robot/Ros_ws#
-            ```
-            2. sourcer votre espace de travail
-            ```python
-            source install/setup.bash
-            ```
-            Cette partie est resevée uniquement si vous voulez lancer votre programme
-            3. lancer votre noeud : TP_nom_groupe
-               exemple: TP_2 => groupe2
-            ```python
-            ros2 run robot TP_2.py 
-```
+    Avant d'executer un code modifier, il faut reconstruire le package par:
+    ```python
+    colcon build --packages-select robot
+    ```
+    
+    - terminal 3:
+    Passer en mode admin pour executer votre code
+    Mode admin
+    1. activer votre envrionnement virtuel
+    ```python
+    (venv) root@PC-41496:/home/robot/Ros_ws#
+    ```
+    2. sourcer votre espace de travail
+    ```python
+    source install/setup.bash
+    ```
+    Cette partie est resevée uniquement si vous voulez lancer votre programme
+    3. lancer votre noeud : TP_nom_groupe
+       exemple: TP_2 => groupe2
+    ```python
+    ros2 run robot TP_2.py 
+    ```
 ## Prise en main
 kuka: dispose des fonctions principales suivantes: 
 
