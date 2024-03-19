@@ -129,8 +129,6 @@ pose.a= 89.62
 pose.b = 1.39
 pose.c = -179.54
 
-
-
 # initialisation et connexion au robot 
 kuka.initialize("/dev/ttyS0")
 # mouvement relatif lineaire de 10.0 mm sur l'axe x
