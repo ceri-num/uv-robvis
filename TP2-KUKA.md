@@ -24,21 +24,21 @@ Ouvrir les terminaux:
 
 ### PC portable
 - terminal 1:
-          1. aller dans workspace
-  
-          ```python
-          cd ~/Ros_ws
-          ```
-          2. Sourcer votre environnement:
-  
-          ```python
-          source install/setup.bash
-          ```
-          3. Lancement du noeud de la camera realsense
-  
-          ```python
-          ros2 launch realsense2_camera rs_launch.py
-          ```
+    1. aller dans workspace
+
+    ```python
+    cd ~/Ros_ws
+    ```
+    2. Sourcer votre environnement:
+
+    ```python
+    source install/setup.bash
+    ```
+    3. Lancement du noeud de la camera realsense
+
+    ```python
+    ros2 launch realsense2_camera rs_launch.py
+    ```
 
 - terminal 2:
           Lancer le noeud aruco
