@@ -27,7 +27,7 @@ Ouvrir les terminaux:
     1. aller dans workspace
 
     ```python
-    cd ~/Ros_ws
+    cd ~/ros2_aruco
     ```
     2. Sourcer votre environnement:
 
