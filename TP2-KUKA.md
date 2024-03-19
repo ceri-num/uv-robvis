@@ -5,6 +5,7 @@
 ## Materiels
 Les materiels à votre disposition sont:
 - robot kuka R650 avec une pince
+   ![kuka](./Imgs/kuka.jng)
 - kit vision composé d'une realsense D435i :
   ![Camera_rs](./Imgs/rs.jpg)
 - PC vision où seront lancer les noeuds de camera realsense
