@@ -77,7 +77,7 @@ Ouvrir les terminaux:
     3. Sourcer votre environnement:
     ```python
     source install/setup.bash
-            ```
+    ```
 
 - terminal 2 : vscode
 
