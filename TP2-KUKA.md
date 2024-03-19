@@ -111,14 +111,35 @@ kuka: dispose des fonctions principales suivantes:
 ### Tester votre premier programme en python
 ```
 #!/usr/bin/env python3
-from pykuka.pykuka import Pose
-import pykuka.pykuka as kuka
+from pykuka.pykuka import Pose        # 
+import pykuka.pykuka as kuka          # importer le package pykuka
 import pykuka.transformations as tf
-import time
-import database as database
+import time                           # 
+import database as database           #
 
 # initialisation et connexion au robot 
 kuka.initialize("/dev/ttyS0")
+# mouvement relatif lineaire de 10.0 mm sur l'axe x
+kuka.move_linRel(10.0,0.0,0.0,0.0,0.0,0.0)
+
+# mouvement relatif lineaire de 10.0 mm sur l'axe y
+kuka.move_linRel(0,10.0,0.0,0.0,0.0,0.0)
+
+# mouvement relatif lineaire de 10.0 mm sur l'axe y
+kuka.move_linRel(0,0.0,10.0,0.0,0.0,0.0)
+
+# Ouvrir la pince 
+kuka.open_tool()
+
+# attente de 1 seconde
+time.sleep(1)
+
+# Fermer la pince 
+kuka.close_tool()
+
+# depalcement PTP
+
+
 
 base= {"base":"Base","BaseBleu":"BaseBleu","BaseRouge":"BaseRouge","BaseGrise":"BaseGrise","BaseVert":"BaseVert"}
 db = database.Database(filename = 'data.db', table = 'PIECE')
