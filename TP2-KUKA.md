@@ -41,22 +41,22 @@ Ouvrir les terminaux:
     ```
 
 - terminal 2:
-          Lancer le noeud aruco
-          ```python
-          ros2 launch ros2_aruco aruco_recognition.launch.py 
-          ```
-          - terminal 3:
-          Lancement du noeud service qui permet de determiner la couleur d'une piece:
-          service serveur 
-          ```python
-          ros2 launch service add_color_check.launch.py 
-          ```
-          - terminal 4:  
-            Faire les memes procedures
-          service client
-          ```python
-          ros2 run service service_client
-          ```
+    Lancer le noeud aruco
+    ```python
+    ros2 launch ros2_aruco aruco_recognition.launch.py 
+    ```
+    - terminal 3:
+    Lancement du noeud service qui permet de determiner la couleur d'une piece:
+    service serveur 
+    ```python
+    ros2 launch service add_color_check.launch.py 
+    ```
+    - terminal 4:  
+      Faire les memes procedures
+    service client
+    ```python
+    ros2 run service service_client
+    ```
 
 
 ### PC fixe
