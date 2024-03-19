@@ -21,8 +21,9 @@ Dans l'espace de travail de ROS2 est doté des noeuds:
   
 ## Configuration
 Ouvrir les terminaux:
+
 ### PC portable
-- terminal 1
+- terminal 1:
 ```python
 cd ~/Ros_ws
 ```
@@ -34,13 +35,18 @@ Lancement du noeud de la camera realsense
 ```python
 ros2 launch realsense2_camera rs_launch.py
 ```
-- terminal 2
+- terminal 2:
 Lancer le noeud aruco
 ```python
 ros2 launch ros2_aruco aruco_recognition.launch.py 
 ```
-- terminal 3
-  
+- terminal 3:
+Lancement du noeud service qui permet de determiner la couleur d'une piece:
+service serveur 
+```python
+ros2 launch service add_color_check.launch.py 
+```
+- terminal 4:  
   Faire les memes procedures
 service client
 ```python
@@ -49,47 +55,47 @@ ros2 run service service_client
 
 
 ### PC fixe
-- terminal 1
-```python
-cd ~/Ros_ws
-```
-Activation de l'environnement virtuel 
-```python
-source ./venv/bin/activate
-```
-En sortie vous aurez:
-```python
-(venv) robot@PC-41496:~/Ros_ws$ 
-```
-Sourcer votre environnement:
-```python
-source install/setup.bash
-```
-Lancement du noeud service qui permet de determiner la couleur d'une piece:
-service serveur 
-```python
-ros2 launch service add_color_check.launch.py 
-```
+- terminal 1 :
+            1. aller dans workspace
+            ```python
+            cd ~/Ros_ws
+            ```
+            2. Activation de l'environnement virtuel 
+            ```python
+            source ./venv/bin/activate
+            ```
+            En sortie vous aurez:
+            ```python
+            (venv) robot@PC-41496:~/Ros_ws$ 
+            ```
+            3. Sourcer votre environnement:
+            ```python
+            source install/setup.bash
+            ```
 
 - terminal 2 : vscode
 
-Avant d'executer un code modifier, il faut reconstruire le package par:
-```python
-colcon build --packages-select robot
-```
-
-- terminal 3
-Passer en mode admin pour executer votre code
-Mode admin
-```python
-(venv) root@PC-41496:/home/robot/Ros_ws#
-```
-```python
-source install/setup.bash
-```
-lancer votre noeud
-```python
-ros2 run robot kuka.py 
+            Avant d'executer un code modifier, il faut reconstruire le package par:
+            ```python
+            colcon build --packages-select robot
+            ```
+            
+            - terminal 3:
+            Passer en mode admin pour executer votre code
+            Mode admin
+            1. activer votre envrionnement virtuel
+            ```python
+            (venv) root@PC-41496:/home/robot/Ros_ws#
+            ```
+            2. sourcer votre espace de travail
+            ```python
+            source install/setup.bash
+            ```
+            Cette partie est resevée uniquement si vous voulez lancer votre programme
+            3. lancer votre noeud : TP_nom_groupe
+               exemple: TP_2 => groupe2
+            ```python
+            ros2 run robot TP_2.py 
 ```
 ## Prise en main
 kuka: dispose des fonctions principales suivantes: 
