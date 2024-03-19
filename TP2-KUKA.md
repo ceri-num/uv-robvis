@@ -216,4 +216,5 @@ Vert-bleu-jaune
 Pour ce faire, on dispose d'une base de données database.db. Lorsque la piece arrive au Point de Prise, la camera scanne l'arucode pour determiner son ID et sa couleur qui sont enregister sont publiés comme de topic ROS2. Le PC s'abonne au topic couleur et l'enregistre dans la base de données. Vous utilierez la database.db pour construire vos scénarios
 A chaque fois que le robot prenne une piece de couleur differente, il le depose sur une autre palette.  
     
+![Niv3](./Imgs/Niv3_rouge.jpeg)  ![Niv3](./Imgs/Niv3.jpeg)
     
