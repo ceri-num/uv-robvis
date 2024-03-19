@@ -21,6 +21,34 @@ Dans l'espace de travail de ROS2 est doté des noeuds:
   
 ## Configuration
 Ouvrir les terminaux:
+### PC portable
+- terminal 1
+```python
+cd ~/Ros_ws
+```
+Sourcer votre environnement:
+```python
+source install/setup.bash
+```
+Lancement du noeud de la camera realsense 
+```python
+ros2 launch realsense2_camera rs_launch.py
+```
+- terminal 2
+Lancer le noeud aruco
+```python
+ros2 launch ros2_aruco aruco_recognition.launch.py 
+```
+- terminal 3
+  
+  Faire les memes procedures
+service client
+```python
+ros2 run service service_client
+```
+
+
+### PC fixe
 - terminal 1
 ```python
 cd ~/Ros_ws
@@ -43,26 +71,14 @@ service serveur
 ros2 launch service add_color_check.launch.py 
 ```
 
-- terminal 2
-  
-  Faire les memes procedures
-service client
-```python
-ros2 run service service_client
-```
-- terminal 3
-Lancer le noeud aruco
-```python
-ros2 launch ros2_aruco aruco_recognition.launch.py 
-```
-- terminal 4 : vscode
+- terminal 2 : vscode
 
 Avant d'executer un code modifier, il faut reconstruire le package par:
 ```python
 colcon build --packages-select robot
 ```
 
-- terminal 5
+- terminal 3
 Passer en mode admin pour executer votre code
 Mode admin
 ```python
@@ -76,7 +92,7 @@ lancer votre noeud
 ros2 run robot kuka.py 
 ```
 ## Prise en main
-kuka: dispose des fonctions principales suivants: 
+kuka: dispose des fonctions principales suivantes: 
 
 
 ### Tester votre premier programme en python
@@ -86,10 +102,11 @@ from pykuka.pykuka import Pose
 import pykuka.pykuka as kuka
 import pykuka.transformations as tf
 import time
-import serial as s
 import database as database
 
+# initialisation et connexion au robot 
 kuka.initialize("/dev/ttyS0")
+
 base= {"base":"Base","BaseBleu":"BaseBleu","BaseRouge":"BaseRouge","BaseGrise":"BaseGrise","BaseVert":"BaseVert"}
 db = database.Database(filename = 'data.db', table = 'PIECE')
 pose = {"id": 3, "couleur":"rouge", "x":6.0, "y": 9.0, "z": 1.0, "a":2.0 , "b":0.0, "c": 0.0, "longueur":0.0, "largeur": 0.0, "hauteur":0.0, "poste":0.0, "frame":"BaseBleu", "rapport":"none"}
