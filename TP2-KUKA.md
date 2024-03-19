@@ -5,7 +5,8 @@
 ## Materiels
 Les materiels à votre disposition sont:
 - robot kuka R650 avec une pince
-- kit vision composé d'une realsense D435i 
+- kit vision composé d'une realsense D435i :
+  ![Camera_rs](./Imgs/rs.jpg)
 - PC vision où seront lancer les noeuds de camera realsense
 - PC fixe pour la programmeation en python sous vscode
 - les cubes de differentes couleurs: jaune, vert, bleu et rouge
