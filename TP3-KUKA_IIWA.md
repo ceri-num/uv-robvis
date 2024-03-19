@@ -5,3 +5,4 @@ Kuka iiwa est un robot collaboratif avec une charge utile de 14 kg
   ![kuka iiwa](./Imgs/iiwa.jpg)
 
 Mode de fonctionnement 
+![kuka iiwa](./Imgs/mode.png)
