@@ -110,14 +110,27 @@ Trouver les coordonnées du centre du cube dans le repère robot.
 
 # Calibration
 
-## PriseDeVueRobot.py
+## PriseDeVueRobot
 
-Le but c'est decrire un programe Python pour capturer les images d'une mire de calibration :
+Creer un fichier ``PriseDeVueRobot.py`` dans le repertoire ``Calibration``
+Le but c'est d'écrire un programe Python pour capturer les images d'une mire de calibration :
 1. Calcul et Enregistrement des T_gripper2base à partir des poses de prise de vue dans le dossier T_gripper2base
-2. Calcul et Enregistrement des T_Base2gripper dans le dossier T_Base2gripper 
-3. Enregistrement des poistions et l'orientation des poitions de prise de vue dans le dossier JointPositions
-4. Enregistrement des images de mire de calibration dans le repertoire RGBImgs
+2. Enregistrement des poistions et l'orientation des positions de prise de vue dans le dossier JointPositions
+3. Enregistrement des images de la mire de calibration dans le repertoire RGBImgs
 
-## CalibrateHandEye()
+## CalibrateHandEye
 
-CalibrateHandEye() permet de determiner la transformation Camera dans le repere de l'outil
+Creer un fichier ``CalibrateHandEye.py`` dans le repertoire ``Calibration``
+CalibrateHandEye() permet de determiner la transformation Camera dans le repere de l'outil. 
+Paramètres d'initialisation: la mire de la calibration est 7X9 de 20 mm
+Charger les images et les transformation de gripper dans la base: T_gripper2base
+Calcul des matrices intrinseques et extrinseques: T_mtx, T_target2Cam
+Calibration hand-eye calibration permet de determiner la transformation T_cam2gripper
+``cv.calibrateHandEye(R_target2cam, t_target2cam, R_gripper2base, t_gripper2base)``
+
+## Estimation de Pose
+Creer un fichier ``prisePiece.py`` dans le repertoire ``Calibration``
+Pour chaque T_cam2gripper des methode calibrateHandEye: 
+pour chaque T_cam2gripper des methodes ``cv.calibrateHandEye``, écrire un programme d'estimation de pose (X, Y, Z) à partir des coordonnées d'un point pixel (x, y) d'une image prise à une pose ``posePrise``, 
+Comparer les differentes methode de calcul de calibrateHandEye
+
