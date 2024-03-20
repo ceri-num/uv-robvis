@@ -105,7 +105,157 @@ Déduire la transformation qui permet de d’exprimer tout point du repère came
 Placer un cube jaune dans l’espace de travail puis exécuter le code de détection 
 Trouver les coordonnées du centre du cube dans le repère robot.
 
+# Detection et localisation d'objet 
 
+
+# Detection et reconnaissance d'objet
+``` python
+
+# read image
+bgr_img = cv2.imread("image.png")
+# Convert HSV
+hsv_img = cv2.cvtColor(bgr_img, cv2.COLOR_BGR2HSV)
+
+# Lower and higher HSV value for red color
+def blue_hsv():
+    # H -> 40 -70
+    # S -> 150-255
+    # V -> 20-255
+    
+    # define range of blue color in HSV
+    lower_hsv = np.array([110, 50, 50])
+    higher_hsv = np.array([130, 255, 255])
+    
+    # generating mask for green color
+    mask = cv2.inRange(hsv_img, lower_hsv, higher_hsv)
+    return mask
+
+
+mask = blue_hsv()
+
+detected_img = cv2.bitwise_and(bgr_img, bgr_img, mask= mask)
+cv2.imshow("detected image", detected_img)
+cv2.waitKey(0)
+
+```
+ les limites: 
+Bleu: 
+ H -> 10 
+ S -> 175-255
+ V -> 20-255
+Jaunes:
+ H -> 10 
+ S -> 175-255
+ V -> 20-255
+vert:
+ H -> 10 
+ S -> 175-255
+ V -> 20-255
+1. Ecrire les fonctions des mask du rouge, du jaune, du vert 
+2. A Partir de l'image `` ecrire programme pour classer les figures en fonction de leur couleur``
+
+Realsense
+``` python
+import cv2
+import numpy as np
+
+cap = cv2.VideoCapture(0)
+
+while(1):
+
+    # Take each frame
+    _, frame = cap.read()
+
+    # Convert BGR to HSV
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+    # define range of blue color in HSV
+    lower_blue = np.array([110,50,50])
+    upper_blue = np.array([130,255,255])
+
+    # Threshold the HSV image to get only blue colors
+    mask = cv2.inRange(hsv, lower_blue, upper_blue)
+
+    # Bitwise-AND mask and original image
+    res = cv2.bitwise_and(frame,frame, mask= mask)
+
+    cv2.imshow('frame',frame)
+    cv2.imshow('mask',mask)
+    cv2.imshow('res',res)
+    k = cv2.waitKey(5) & 0xFF
+    if k == 27:
+        break
+
+cv2.destroyAllWindows()
+```
+
+On prendre une camera sur le robot. utliser cette camera pour reconnaitre 
+et classer les pieces en fonction de leur couleur
+
+Detection de formes: 
+``` python
+
+def prisePhoto(n=0):
+
+    camera = cv.VideoCapture(n, cv2.CAP_DSHOW)
+
+    ret, img = camera.read()
+
+    # img = cv.imread("img11.jpg")
+
+    # Was the image there?
+    if img is None:
+        print("Error: File not found")
+        exit(0)
+
+    cv.imshow('Input Image', img)
+
+    # Convert image to grayscale
+    gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+
+    # Convert image to binary
+    _, bw = cv.threshold(gray, 50, 255, cv.THRESH_BINARY | cv.THRESH_OTSU)
+
+    # Find all the contours in the thresholded image
+    contours, _ = cv.findContours(bw, cv.RETR_LIST, cv.CHAIN_APPROX_NONE)
+
+    detection=[]
+
+    for i, c in enumerate(contours):
+
+             # Calculate the area of each contour
+             area = cv.contourArea(c)
+
+             # Ignore contours that are too small or too large
+             if area < 3700 or 200000 < area:
+                 continue
+             centre,angles = axes(c, img)
+             detection.append(axes(c, img))
+
+    # print(detection)
+
+    cv.imshow('Image', img)
+    cv.waitKey(0)
+    cv.destroyAllWindows()
+
+
+    # Save the output image to the current directory
+    cv.imwrite("img.jpg", img)
+    return detection
+
+```
+Ecrire un programme pour detecter les contoures et les centres de chaque pieces  
+
+
+# Localisation d'un objet
+
+## Calibration 
+
+### Prise de vue 
+
+### Calibration HandEye
+
+### Prise d'un objet 
 
 
 # Calibration
