@@ -237,6 +237,8 @@ Ecrire un programme pour detecter les contoures et les centres de chaque pieces
 
 # Calibration
 
+![Calibration HandeEye](./Imgs/hande-eye-figure.png)
+
 ## PriseDeVueRobot
 
 Creer un fichier ``PriseDeVueRobot.py`` dans le repertoire ``Calibration``
