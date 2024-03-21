@@ -105,10 +105,22 @@ Déduire la transformation qui permet de d’exprimer tout point du repère came
 Placer un cube jaune dans l’espace de travail puis exécuter le code de détection 
 Trouver les coordonnées du centre du cube dans le repère robot.
 
-# Detection et localisation d'objet 
+# Detection reconnaissance et localisation d'objet 
 
 
-# Detection et reconnaissance d'objet
+# [Detection](https://www.aranacorp.com/fr/reconnaissance-de-forme-et-de-couleur-avec-python/amp/)
+Nous allons créer un classe détection de forme qui va nous permettre de sélectionner une forme en fonction du nombre de contours trouvé.
+Soit une classe python ``class Detector`` avec les fonctions:
+- ``jaune``:image
+- - ``vert``:image
+- - ``rouge``:image
+-  ``bleu``: image
+-  ``contours`` : image
+- ``forme`` : contours
+-  ``centre```: contours
+
+
+## Detection de couleur 
 ``` python
 
 # read image
@@ -192,7 +204,7 @@ cv2.destroyAllWindows()
 On prendre une camera sur le robot. utliser cette camera pour reconnaitre 
 et classer les pieces en fonction de leur couleur
 
-Detection de formes: 
+## Detection de formes: 
 ``` python
 
 def prisePhoto(n=0):
@@ -246,6 +258,7 @@ def prisePhoto(n=0):
 ```
 Ecrire un programme pour detecter les contoures et les centres de chaque pieces  
 
+## Centre : 
 
 # Localisation d'un objet
 
