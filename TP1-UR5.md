@@ -121,6 +121,30 @@ Soit une classe python ``class Detector`` avec les fonctions:
 
 
 ## Detection de couleur 
+
+ les limites: 
+- Rouge:
+ H -> 0-10 
+ S -> 175-255
+ V -> 20-255
+
+ H -> 0-10 
+ S -> 175-255
+ V -> 20-255
+ 
+- Jaunes:
+ H -> 0-10 
+ S -> 175-255
+ V -> 20-255
+
+- Vert:
+ H -> 0-10 
+ S -> 175-255
+ V -> 20-255
+
+### [Exemple de detection du bleu] (https://medium.com/@gowtham180502/how-to-detect-colors-using-opencv-python-98aa0241e713) 
+
+
 ``` python
 
 # read image
@@ -130,9 +154,9 @@ hsv_img = cv2.cvtColor(bgr_img, cv2.COLOR_BGR2HSV)
 
 # Lower and higher HSV value for red color
 def blue_hsv():
-    # H -> 40 -70
-    # S -> 150-255
-    # V -> 20-255
+    # H -> 110-130
+    # S -> 50-255
+    # V -> 50-255
     
     # define range of blue color in HSV
     lower_hsv = np.array([110, 50, 50])
@@ -150,23 +174,13 @@ cv2.imshow("detected image", detected_img)
 cv2.waitKey(0)
 
 ```
- les limites: 
-Bleu: 
- H -> 10 
- S -> 175-255
- V -> 20-255
-Jaunes:
- H -> 10 
- S -> 175-255
- V -> 20-255
-vert:
- H -> 10 
- S -> 175-255
- V -> 20-255
-1. Ecrire les fonctions des mask du rouge, du jaune, du vert 
+
+1. Ecrire les fonctions du mask du rouge, du jaune, du vert et du jaune 
 2. A Partir de l'image `` ecrire programme pour classer les figures en fonction de leur couleur``
 
-Realsense
+
+### Exemple de la camera Realsense
+
 ``` python
 import cv2
 import numpy as np
@@ -204,59 +218,18 @@ cv2.destroyAllWindows()
 On prendre une camera sur le robot. utliser cette camera pour reconnaitre 
 et classer les pieces en fonction de leur couleur
 
+
 ## Detection de formes: 
+
 ``` python
 
 def prisePhoto(n=0):
 
-    camera = cv.VideoCapture(n, cv2.CAP_DSHOW)
-
-    ret, img = camera.read()
-
-    # img = cv.imread("img11.jpg")
-
-    # Was the image there?
-    if img is None:
-        print("Error: File not found")
-        exit(0)
-
-    cv.imshow('Input Image', img)
-
-    # Convert image to grayscale
-    gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-
-    # Convert image to binary
-    _, bw = cv.threshold(gray, 50, 255, cv.THRESH_BINARY | cv.THRESH_OTSU)
-
-    # Find all the contours in the thresholded image
-    contours, _ = cv.findContours(bw, cv.RETR_LIST, cv.CHAIN_APPROX_NONE)
-
-    detection=[]
-
-    for i, c in enumerate(contours):
-
-             # Calculate the area of each contour
-             area = cv.contourArea(c)
-
-             # Ignore contours that are too small or too large
-             if area < 3700 or 200000 < area:
-                 continue
-             centre,angles = axes(c, img)
-             detection.append(axes(c, img))
-
-    # print(detection)
-
-    cv.imshow('Image', img)
-    cv.waitKey(0)
-    cv.destroyAllWindows()
-
-
-    # Save the output image to the current directory
-    cv.imwrite("img.jpg", img)
-    return detection
+  
 
 ```
 Ecrire un programme pour detecter les contoures et les centres de chaque pieces  
+[Doc](https://www.aranacorp.com/fr/reconnaissance-de-forme-et-de-couleur-avec-python/amp/)
 
 ## Centre : 
 
