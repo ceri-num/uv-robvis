@@ -117,7 +117,7 @@ Soit une classe python ``class Detector`` avec les fonctions:
 -  ``bleu``: image
 -  ``contours`` : image
 - ``forme`` : contours
--  ``centre```: contours
+-  ``centre``: contours
 
 
 ## Detection de couleur 
