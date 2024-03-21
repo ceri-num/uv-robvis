@@ -112,8 +112,8 @@ Trouver les coordonnées du centre du cube dans le repère robot.
 Nous allons créer un classe détection de forme qui va nous permettre de sélectionner une forme en fonction du nombre de contours trouvé.
 Soit une classe python ``class Detector`` avec les fonctions:
 - ``jaune``:image
-- - ``vert``:image
-- - ``rouge``:image
+-  ``vert``:image
+- ``rouge``:image
 -  ``bleu``: image
 -  ``contours`` : image
 - ``forme`` : contours
