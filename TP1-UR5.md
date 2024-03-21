@@ -237,7 +237,7 @@ Ecrire un programme pour detecter les contoures et les centres de chaque pieces
 
 # Calibration
 
-![Calibration HandeEye](./Imgs/hande-eye_figure.png)
+![Calibration HandeEye](./Imgs/hand-eye_figure.png)
 
 ## PriseDeVueRobot
 
