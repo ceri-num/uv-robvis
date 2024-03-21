@@ -233,15 +233,6 @@ Ecrire un programme pour detecter les contoures et les centres de chaque pieces
 
 ## Centre : 
 
-# Localisation d'un objet
-
-## Calibration 
-
-### Prise de vue 
-
-### Calibration HandEye
-
-### Prise d'un objet 
 
 
 # Calibration
