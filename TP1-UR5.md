@@ -124,23 +124,23 @@ Soit une classe python ``class Detector`` avec les fonctions:
 
  les limites: 
 - Rouge:
- H -> 0-10 
- S -> 175-255
- V -> 20-255
+- - H -> 0-10 
+- - S -> 175-255
+- - V -> 20-255
 
- H -> 0-10 
- S -> 175-255
- V -> 20-255
+- - H -> 0-10 
+- - S -> 175-255
+- - V -> 20-255
  
 - Jaunes:
- H -> 0-10 
- S -> 175-255
- V -> 20-255
+- - H -> 0-10 
+- - S -> 175-255
+- - V -> 20-255
 
 - Vert:
- H -> 0-10 
- S -> 175-255
- V -> 20-255
+- - H -> 0-10 
+- - S -> 175-255
+- - V -> 20-255
 
 ### [Exemple de detection du bleu](https://medium.com/@gowtham180502/how-to-detect-colors-using-opencv-python-98aa0241e713) 
 
