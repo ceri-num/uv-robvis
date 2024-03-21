@@ -6,7 +6,7 @@ UR5 est un robot collaboratif avec une charge utile de 5 kg
 ![UR5](./Imgs/ur5.png)
 
 ## Interface de programmation Polyscope
-
+![Polyscope](./Imgs/interface_polyscope.png)
 •	Exécuter programme : Permet de choisir et exécuter un programme existant. 
 •	Programmer le robot : Modifier un programme ou créer un nouveau programme.
 •	Configuration robot : Changer la langue, régler les mots de passe, mettre à jour le logiciel, etc
@@ -14,7 +14,11 @@ UR5 est un robot collaboratif avec une charge utile de 5 kg
 
 Ecran d’initialisation :
 
+![Initialisation](./Imgs/init_ur5.png)
+
 Ecran éditeur Pose
+
+![Editeur Pose](./Imgs/editeur_pose.png)
 
 Les cases textuelles affichent les valeurs complètes des coordonnées de ce TCP (Tool Centre Point) par rapport à la fonction sélectionnée. X, Y et Z représentent la position de l’outil, tandis que RX, RY et RZ contrôlent l’orientation de l’outil.
 
@@ -32,6 +36,8 @@ Un nouveau programme de robot peut démarrer soit à partir d’un modèle soit 
 
 
 L’onglet Programme montre le programme actuel en cours d’édition.
+
+![Programme](./Imgs/program.png)
 
 Types de déplacement
 Il existe trois types de déplacement :
