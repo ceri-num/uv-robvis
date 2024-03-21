@@ -3,6 +3,8 @@ UR5 est un robot à six (6) degré de liberté. Il est constitué des parties su
 Base, Epaule, Coude, poignet 1, Poignet 2 et Poignet 3.
 UR5 est un robot collaboratif avec une charge utile de 5 kg
 
+![UR5](./Imgs/ur5.png)
+
 ## Interface de programmation Polyscope
 
 •	Exécuter programme : Permet de choisir et exécuter un programme existant. 
@@ -236,7 +238,7 @@ Ecrire un programme pour detecter les contoures et les centres de chaque pieces
 
 
 # Calibration
-
+Le but est de déterminer  la transformation T_cam2gripper (gTc) de la Caméra dans le repère Tool 
 ![Calibration HandeEye](./Imgs/hand-eye_figure.png)
 
 ## PriseDeVueRobot
@@ -257,7 +259,7 @@ Calcul des matrices intrinseques et extrinseques: T_mtx, T_target2Cam
 Calibration hand-eye calibration permet de determiner la transformation T_cam2gripper
 ``cv.calibrateHandEye(R_target2cam, t_target2cam, R_gripper2base, t_gripper2base)``
 
-## Estimation de Pose
+# Estimation de Pose
 Creer un fichier ``prisePiece.py`` dans le repertoire ``Calibration``
 Pour chaque T_cam2gripper des methode calibrateHandEye: 
 pour chaque T_cam2gripper des methodes ``cv.calibrateHandEye``, écrire un programme d'estimation de pose (X, Y, Z) à partir des coordonnées d'un point pixel (x, y) d'une image prise à une pose ``posePrise``, 
