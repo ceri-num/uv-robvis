@@ -325,9 +325,9 @@ Pour se faire, exécuter le code priseDevueRobot, CalibrateHandEye et prisePiece
 Comparer les differentes methode de calcul de calibrateHandEye
 
 Application: 
+![simple](./Imgs/simple.png) ![Complexe](./Imgs/complexe.png)
 
-1. Determiner la couleur, le centre et les coordonnées cartesiennes de la Piece suivante:
-
+1. Determiner la couleur, le centre et les coordonnées cartesiennes de la Piece simple
    
-2. Detecter et localiser les pieces présentes dans l'espace du travail du robot :
+2. Detecter et localiser les pieces présentes dans l'espace du travail du robot 
 
