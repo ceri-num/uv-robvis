@@ -117,34 +117,35 @@ Soit une classe python ``class Detector`` avec les fonctions:
 -  ``vert``:image
 - ``rouge``:image
 -  ``bleu``: image
+-  ``couleur: image
 -  ``contours`` : image
-- ``forme`` : contours
+- ``forme_simple`` : contours
+- ``forme_complexe`` : contours
 -  ``centre``: contours
+-  ``orientation``: contours
+-  ``positionXYZ: centre
 
 
-## Detection de couleur 
+## [Detection de couleur](https://medium.com/@gowtham180502/how-to-detect-colors-using-opencv-python-98aa0241e713) 
 
  les limites: 
 - Rouge:
-  - H -> 0-10 
-  - S -> 175-255
-  - V -> 20-255
-
-  - H -> 0-10 
-  - S -> 175-255
-  - V -> 20-255
+  - H -> ?
+  - S -> ?
+  - V -> ?
  
 - Jaunes:
-  - H -> 0-10 
-  - S -> 175-255
-  - V -> 20-255
+
+  - H ->?
+  - S -> ?
+  - V ->?
 
 - Vert:
-  - H -> 0-10 
-  - S -> 175-255
-  - V -> 20-255
+  - H -> ?
+  - S -> ?
+  - V -> ?
 
-### [Exemple de detection du bleu](https://medium.com/@gowtham180502/how-to-detect-colors-using-opencv-python-98aa0241e713) 
+### Exemple de detection du bleu
 
 
 ``` python
@@ -178,7 +179,7 @@ cv2.waitKey(0)
 ```
 
 1. Ecrire les fonctions du mask du rouge, du jaune, du vert et du jaune 
-2. A Partir de l'image `` ecrire programme pour classer les figures en fonction de leur couleur``
+2. A Partir de l'image `` écrire programme pour classer les figures en fonction de leur couleur``
 
 
 ### Exemple de la camera Realsense
@@ -243,7 +244,7 @@ Le but est de déterminer  la transformation T_cam2gripper (gTc) de la Caméra d
 
 ## PriseDeVueRobot
 
-Creer un fichier ``PriseDeVueRobot.py`` dans le repertoire ``Calibration``
+Créer un fichier ``PriseDeVueRobot.py`` dans le repertoire ``Calibration``
 Le but c'est d'écrire un programe Python pour capturer les images d'une mire de calibration :
 1. Calcul et Enregistrement des T_gripper2base à partir des poses de prise de vue dans le dossier T_gripper2base
 2. Enregistrement des poistions et l'orientation des positions de prise de vue dans le dossier JointPositions
@@ -251,7 +252,7 @@ Le but c'est d'écrire un programe Python pour capturer les images d'une mire de
 
 ## CalibrateHandEye
 
-Creer un fichier ``CalibrateHandEye.py`` dans le repertoire ``Calibration``
+Créer un fichier ``CalibrateHandEye.py`` dans le repertoire ``Calibration``
 CalibrateHandEye() permet de determiner la transformation Camera dans le repere de l'outil. 
 Paramètres d'initialisation: la mire de la calibration est 7X9 de 20 mm
 Charger les images et les transformation de gripper dans la base: T_gripper2base
@@ -260,8 +261,15 @@ Calibration hand-eye calibration permet de determiner la transformation T_cam2gr
 ``cv.calibrateHandEye(R_target2cam, t_target2cam, R_gripper2base, t_gripper2base)``
 
 # Estimation de Pose
-Creer un fichier ``prisePiece.py`` dans le repertoire ``Calibration``
+Créer un fichier ``prisePiece.py`` dans le repertoire ``Calibration``
 Pour chaque T_cam2gripper des methode calibrateHandEye: 
 pour chaque T_cam2gripper des methodes ``cv.calibrateHandEye``, écrire un programme d'estimation de pose (X, Y, Z) à partir des coordonnées d'un point pixel (x, y) d'une image prise à une pose ``posePrise``, 
 Comparer les differentes methode de calcul de calibrateHandEye
+
+Application: 
+
+1. Determiner la couleur, le centre et les coordonnées Cartesiennes de la Piece suivante:
+
+   
+3. Detecter et localiser les pieces presentes dans l'espace du travail du robot 
 
