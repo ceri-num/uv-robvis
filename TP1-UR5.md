@@ -133,7 +133,7 @@ Cette permettra de détecter, reconnaitre et localiser un objet
 
 ### Exemple de detection du bleu
 
-
+![Couleur](./Imgs/couleur.png)
 ``` python
 
 # read image
