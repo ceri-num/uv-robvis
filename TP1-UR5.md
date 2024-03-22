@@ -60,7 +60,7 @@ Déduire le programme pour faire parcourir les mêmes coins de la boite
 Transformation Homogène
 Rappel 
 
-![mat](./Imgs/Trans.png)
+![mat](./Imgs/Trans.PNG)
 
 
 
