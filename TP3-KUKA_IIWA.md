@@ -27,10 +27,10 @@ PTP est un mouvement de positionnement rapide. La trajectoire exacte du mouvemen
 # Prise en main
 Creation de nouvelle application: 
 Aller dans Fichier-> Nouveau-> Application SunRise: 
- ![Nouvelle Application](./Imgs/apk1.png)
+ ![Nouvelle Application](./Imgs/AP1.png)
  Selectionnez Application RoboticsAPI et clicker sur ``Suivant``
  Remplacer RobotApplication par le nom de votre application: RobVis_<nom_de_votre_groupe> par exemple RobVis_3
- ![Nouvelle Application](./Imgs/apk2.png)
+ ![Nouvelle Application](./Imgs/AP2.png)
  Clicker sur ``Terminer`` pour créer votre application 
  Dans le fichier 
 
