@@ -62,21 +62,9 @@ Rappel
 
 Soit (z y x) t les coordonnées d'un point M dans le repère Rj, alors les coordonnées du point M dans le repère Ri,
 
-Application 2 :
-Les systèmes de coordonnées :
-3 systèmes de coordonnées distincts :
-- Le monde : Système de référence connu.
-- La caméra : Système dans lequel s’effectue la projection des points 3D vers 2D.
-- L’image : Système établissant la référence aux pixels.
 
-Calibration de la caméra
-La calibration de la caméra consiste à déterminer les paramètres de la transformation entre les coordonnées du monde et les coordonnées image (et inversement).
-2 types de paramètres à prendre en compte
-PARAMETRES INTRINSEQUES qui décrivent les propriétés optiques et géométriques internes de la caméra. Transformation projective décrite par les paramètres intrinsèques : Rcamera  Rimage 
-PARAMETRES EXTRINSEQUES qui décrivent la relation qui existe entre le référentiel monde et le référentiel Camera. Transformation Rigide décrite par les paramètres extrinsèques (R et T) : Rext  Rcamera
-Pour se faire, exécuter le code priseDevue, Calibration et déterminer la matrice RT  
 
-Application 3 :
+Application :
 
 Soit :
 bTw la transformation du World dans le repère base du Robot
@@ -104,28 +92,26 @@ gTc  = gTf* fTb* bTw*inv(cTw)
 
 Déduire la transformation qui permet de d’exprimer tout point du repère camera dans le repère base du robot 
 
-Placer un cube jaune dans l’espace de travail puis exécuter le code de détection 
-Trouver les coordonnées du centre du cube dans le repère robot.
 
-# Detection reconnaissance et localisation d'objet 
+# Détection reconnaissance et localisation d'objet 
 
 
-# [Detection](https://www.aranacorp.com/fr/reconnaissance-de-forme-et-de-couleur-avec-python/amp/)
-Nous allons créer un classe détection de forme qui va nous permettre de sélectionner une forme en fonction du nombre de contours trouvé.
+## [Détection](https://www.aranacorp.com/fr/reconnaissance-de-forme-et-de-couleur-avec-python/amp/)
+
 Soit une classe python ``class Detector`` avec les fonctions:
-- ``jaune``:image
+-  ``jaune``:image
 -  ``vert``:image
-- ``rouge``:image
+-  ``rouge``:image
 -  ``bleu``: image
--  ``couleur: image
+-  ``couleur``: image
 -  ``contours`` : image
-- ``forme_simple`` : contours
-- ``forme_complexe`` : contours
+-  ``forme_simple`` : contours
+-  ``forme_complexe`` : contours
 -  ``centre``: contours
 -  ``orientation``: contours
--  ``positionXYZ: centre
+-  ``positionXYZ``: centre
 
-
+Cette permettra de détecter, reconnaitre et localiser un objet
 ## [Detection de couleur](https://medium.com/@gowtham180502/how-to-detect-colors-using-opencv-python-98aa0241e713) 
 
  les limites: 
@@ -184,6 +170,7 @@ cv2.waitKey(0)
 ## Detection de formes: 
 ## Centre : 
 
+
 ### Exemple de la camera realsense
 
 ``` python
@@ -222,6 +209,7 @@ cv2.destroyAllWindows()
 
 On prendre une camera sur le robot. utliser cette camera pour reconnaitre 
 et classer les pieces en fonction de leur couleur
+
 
 ## Estimation de Pose par realsense
 
@@ -290,13 +278,22 @@ def positionXYZ(x, y):
 ```
 
 
-
-
-
-
 # Calibration
+
 Le but est de déterminer  la transformation T_cam2gripper (gTc) de la Caméra dans le repère Tool 
 ![Calibration HandeEye](./Imgs/hand-eye_figure.png)
+
+Les systèmes de coordonnées :
+3 systèmes de coordonnées distincts :
+- Le monde : Système de référence connu.
+- La caméra : Système dans lequel s’effectue la projection des points 3D vers 2D.
+- L’image : Système établissant la référence aux pixels.
+
+La calibration de la caméra consiste à déterminer les paramètres de la transformation entre les coordonnées du monde et les coordonnées image (et inversement).
+2 types de paramètres à prendre en compte:
+- PARAMETRES INTRINSEQUES qui décrivent les propriétés optiques et géométriques internes de la caméra. Transformation projective décrite par les paramètres intrinsèques : Rcamera => Rimage 
+- PARAMETRES EXTRINSEQUES qui décrivent la relation qui existe entre le référentiel monde et le référentiel Camera. Transformation Rigide décrite par les paramètres extrinsèques (R et T) : Rext => Rcamera
+
 
 ## PriseDeVueRobot
 
@@ -305,6 +302,7 @@ Le but c'est d'écrire un programe Python pour capturer les images d'une mire de
 1. Calcul et Enregistrement des T_gripper2base à partir des poses de prise de vue dans le dossier T_gripper2base
 2. Enregistrement des poistions et l'orientation des positions de prise de vue dans le dossier JointPositions
 3. Enregistrement des images de la mire de calibration dans le repertoire RGBImgs
+
 
 ## CalibrateHandEye
 
@@ -316,10 +314,14 @@ Calcul des matrices intrinseques et extrinseques: T_mtx, T_target2Cam
 Calibration hand-eye calibration permet de determiner la transformation T_cam2gripper
 ``cv.calibrateHandEye(R_target2cam, t_target2cam, R_gripper2base, t_gripper2base)``
 
+
 # Estimation de Pose
+
 Créer un fichier ``prisePiece.py`` dans le repertoire ``Calibration``
 Pour chaque T_cam2gripper des methode calibrateHandEye: 
 pour chaque T_cam2gripper des methodes ``cv.calibrateHandEye``, écrire un programme d'estimation de pose (X, Y, Z) à partir des coordonnées d'un point pixel (x, y) d'une image prise à une pose ``posePrise`` d'une piece simple, 
+
+Pour se faire, exécuter le code priseDevueRobot, CalibrateHandEye et prisePiece.py
 Comparer les differentes methode de calcul de calibrateHandEye
 
 Application: 
