@@ -23,3 +23,58 @@ PTP est un mouvement de positionnement rapide. La trajectoire exacte du mouvemen
 
 -	Mouvement circulaire (CIRC): Le robot guide le TCP à la vitesse définie le long d'une trajectoire circulaire jusqu'au point final
  ![Mouvement circulaire](./Imgs/circ.png)
+
+# Prise en main
+Creation de nouvelle application: 
+Aller dans Fichier-> Nouveau-> Application SunRise: 
+ ![Nouvelle Application](./Imgs/apk1.png)
+ Selectionnez Application RoboticsAPI et clicker sur ``Suivant``
+ Remplacer RobotApplication par le nom de votre application: RobVis_<nom_de_votre_groupe> par exemple RobVis_3
+ ![Nouvelle Application](./Imgs/apk2.png)
+ Clicker sur ``Terminer`` pour créer votre application 
+ Dans le fichier 
+
+```java
+Package application;
+
+
+import javax.inject.Inject;
+import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
+import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
+import com.kuka.roboticsAPI.deviceModel.LBR;
+
+/**
+ * Implementation of a robot application.
+ * <p>
+ * The application provides a {@link RoboticsAPITask#initialize()} and a 
+ * {@link RoboticsAPITask#run()} method, which will be called successively in 
+ * the application lifecycle. The application will terminate automatically after 
+ * the {@link RoboticsAPITask#run()} method has finished or after stopping the 
+ * task. The {@link RoboticsAPITask#dispose()} method will be called, even if an 
+ * exception is thrown during initialization or run. 
+ * <p>
+ * <b>It is imperative to call <code>super.dispose()</code> when overriding the 
+ * {@link RoboticsAPITask#dispose()} method.</b> 
+ * 
+ * @see UseRoboticsAPIContext
+ * @see #initialize()
+ * @see #run()
+ * @see #dispose()
+ */
+public class test extends RoboticsAPIApplication {
+	@Inject
+	private LBR lBR_iiwa_14_R820_1;
+
+	@Override
+	public void initialize() {
+		// initialize your application here
+	}
+
+	@Override
+	public void run() {
+		// your application execution starts here
+		lBR_iiwa_14_R820_1.move(ptpHome());
+	}
+}
+```
+
