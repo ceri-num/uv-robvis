@@ -148,6 +148,15 @@ public class TP3 extends RoboticsAPIApplication {
 	public void run() {
 		// your application execution starts here
 		pince.move(ptp(getApplicationData().getFrame("/Start")).setJointVelocityRel(0.5));
+
+	/*
+	----------------------------------------------------------------------------------------------------------------------------------------
+
+	ECRIRE VOTRE CODE ICI
+
+	------------------------------------------------------------------------------------------------------------------------------------------
+	*/
+
 	
 	}
 	
