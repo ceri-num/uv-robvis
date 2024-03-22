@@ -60,7 +60,7 @@ Déduire le programme pour faire parcourir les mêmes coins de la boite
 Transformation Homogène
 Rappel 
 
-Soit (z y x) t les coordonnées d'un point M dans le repère Rj, alors les coordonnées du point M dans le repère Ri,
+![mat](./Imgs/Trans.png)
 
 
 
