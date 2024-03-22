@@ -181,13 +181,15 @@ cv2.waitKey(0)
 1. Ecrire les fonctions du mask du rouge, du jaune, du vert et du jaune 
 2. A Partir de l'image `` écrire programme pour classer les figures en fonction de leur couleur``
 
+## Detection de formes: 
+## Centre : 
 
-### Exemple de la camera Realsense
+### Exemple de la camera realsense
 
 ``` python
 import cv2
 import numpy as np
-
+#cap = cv.VideoCapture(0,cv2.CAP_DSHOW)
 cap = cv2.VideoCapture(0)
 
 while(1):
@@ -221,20 +223,74 @@ cv2.destroyAllWindows()
 On prendre une camera sur le robot. utliser cette camera pour reconnaitre 
 et classer les pieces en fonction de leur couleur
 
-
-## Detection de formes: 
+## Estimation de Pose par realsense
 
 ``` python
+# packages
+import pyrealsense2 as rs
+import numpy as np
 
-def prisePhoto(n=0):
+"""
+Utilisation de la camera intel realsense
+"""
+def initialize_device():
+    # Create a pipeline
+    pipeline = rs.pipeline()
+    config = rs.config()
 
-  
+    pipeline_wrapper = rs.pipeline_wrapper(pipeline)
+    pipeline_profile = config.resolve(pipeline_wrapper)
+    device = pipeline_profile.get_device()
+
+
+    config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
+    config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
+
+    # Start streaming
+    profile = pipeline.start(config)
+
+    # Get stream profile and camera intrinsics
+    color_profile = rs.video_stream_profile(profile.get_stream(rs.stream.color))
+    color_intrinsics = color_profile.get_intrinsics()
+    color_extrinsics = color_profile.get_extrinsics_to(color_profile)
+   
+    # Getting the depth sensor's depth scale (see rs-align example for explanation)
+    depth_sensor = profile.get_device().first_depth_sensor()
+    depth_scale = depth_sensor.get_depth_scale()
+
+    # Create an align object
+    # rs.align allows us to perform alignment of depth frames to others frames
+    # The "align_to" is the stream type to which we plan to align depth frames.
+    align_to = rs.stream.color
+    align = rs.align(align_to)
+
+    return pipeline, align, depth_scale,color_intrinsics,color_extrinsics
+
+
+"""
+Estimation de position X, Y, Z par la camera realsense dans le repere camera
+"""
+def positionXYZ(x, y):
+    # x et y en pixel
+    pipeline, align, depth_scale, color_intrinsics,color_extrinsics = initialize_device()
+
+    frames = pipeline.wait_for_frames()
+    aligned_frames = align.process(frames)
+
+    # Get aligned frames
+    aligned_depth_frame = aligned_frames.get_depth_frame()  # aligned_depth_frame is a 640x480 depth image
+    color_frame = aligned_frames.get_color_frame()
+    depth = aligned_depth_frame.get_distance(x, y)
+    # X, Y, Z = rs.rs2_deproject_pixel_to_point(intr, pixel, depth)
+    point = rs.rs2_deproject_pixel_to_point(color_intrinsics, [x, y], depth)
+    # en mètres m
+    point=[point[0]*1000, point[1]*1000, point[2]*1000]
+    return point
 
 ```
-Ecrire un programme pour detecter les contoures et les centres de chaque pièces  
-[Doc](https://www.aranacorp.com/fr/reconnaissance-de-forme-et-de-couleur-avec-python/amp/)
 
-## Centre : 
+
+
 
 
 
@@ -263,13 +319,13 @@ Calibration hand-eye calibration permet de determiner la transformation T_cam2gr
 # Estimation de Pose
 Créer un fichier ``prisePiece.py`` dans le repertoire ``Calibration``
 Pour chaque T_cam2gripper des methode calibrateHandEye: 
-pour chaque T_cam2gripper des methodes ``cv.calibrateHandEye``, écrire un programme d'estimation de pose (X, Y, Z) à partir des coordonnées d'un point pixel (x, y) d'une image prise à une pose ``posePrise``, 
+pour chaque T_cam2gripper des methodes ``cv.calibrateHandEye``, écrire un programme d'estimation de pose (X, Y, Z) à partir des coordonnées d'un point pixel (x, y) d'une image prise à une pose ``posePrise`` d'une piece simple, 
 Comparer les differentes methode de calcul de calibrateHandEye
 
 Application: 
 
-1. Determiner la couleur, le centre et les coordonnées Cartesiennes de la Piece suivante:
+1. Determiner la couleur, le centre et les coordonnées cartesiennes de la Piece suivante:
 
    
-3. Detecter et localiser les pieces presentes dans l'espace du travail du robot 
+2. Detecter et localiser les pieces présentes dans l'espace du travail du robot :
 
