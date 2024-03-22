@@ -183,8 +183,8 @@ Option Subscriber ROS2
 
 ## Travail à faire
 
-Scenarios 
-Soint les points Pi(0<i<N) de la Pallette, P0 le point de depart, pPrise position de prise, pPose la position de depose, pAvant,pApres les position respectivment 
+- Scenarios 
+Soient les points Pi(0<i<N) de la Pallette, P0 le point de depart, pPrise position de prise, pPose la position de depose, pAvant,pApres les position respectivment 
 avant et apres la prise de piece sur le convoyeurs, pa les positions d'approche, px les positions de depose de pieces sur la palette,
 soient Dx,DY et DZ la distances entre les positions suivant respectivement les axes x,y et z
 
@@ -210,7 +210,7 @@ Deduire l'algorithme qui permet de faire la meme operation connaissant les point
 
 ![Palletes_ABC](./Imgs/Niv2_jaune_rouge.jpeg)
 
-5.  Ecrire le programme correspondant au robot de prendre les pieces sur le convoyeur et les poser sur la pallette sur deux niveaux
+5.  Ecrire le programme correspondant au robot de prendre les pieces sur le convoyeur et les poser sur la pallette sur trois niveaux
  Deduire l'algorithme qui permet de faire la meme operation connaissant les points seulement les positions P0 et P1
 
 7.  Deduire l'algorithme qui permet de faire la meme operation  connaissant les points seulement les positions P0 et P1 et les dimentions de la pallette NxMxH
