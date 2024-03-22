@@ -137,11 +137,11 @@ Cette permettra de détecter, reconnaitre et localiser un objet
 ``` python
 
 # read image
-bgr_img = cv2.imread("image.png")
+bgr_img = cv2.imread("couleur.png")
 # Convert HSV
 hsv_img = cv2.cvtColor(bgr_img, cv2.COLOR_BGR2HSV)
 
-# Lower and higher HSV value for red color
+# Lower and higher HSV value for blue color
 def blue_hsv():
     # H -> 110-130
     # S -> 50-255
@@ -151,7 +151,7 @@ def blue_hsv():
     lower_hsv = np.array([110, 50, 50])
     higher_hsv = np.array([130, 255, 255])
     
-    # generating mask for green color
+    # generating mask for blue color
     mask = cv2.inRange(hsv_img, lower_hsv, higher_hsv)
     return mask
 
