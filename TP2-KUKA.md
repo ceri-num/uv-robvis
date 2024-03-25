@@ -1,37 +1,26 @@
 
 ## Introduction
 
-Détermination de bTw
 Soit un R1 une base associée à une palette. Soit R0, le repère associé au robot. 
 
 ![Matrice](./Imgs/rotxyz.png)
 
-1. Exprimer la matrice de transformation homogene `Trobot` du robot à partir de ses coordonnées `(x,y,z,a,b,c)` dans l'espace[ ](http://web.mit.edu/2.05/www/Handout/HO2.PDF)
 
-   ``` pyuthon
-   Trobot= f(x,y,z,a,b,c)
+   ``` python
+   R(A,B,C)= Rz(A)*Ry(B)*Rx(C)
+   ```  
+
+1. Exprimer la matrice de transformation homogene `T` du robot à partir de ses coordonnées `(x,y,z,a,b,c)` dans l'espace[ ](http://web.mit.edu/2.05/www/Handout/HO2.PDF)
+
+   ``` python
+   T = f(x,y,z,a,b,c)
    ```  
    
-3.	Définir trois points A, B et C tels que ABC soit un trièdre rectangle direct (AB, AC, AB^AC) soit une base directe.
+2.	Définir trois points A, B et C tels que ABC soit un trièdre rectangle direct (AB, AC, AB^AC) soit une base directe:
    AB = X(base), AC = Y(base)
-4. Calculer les vecteurs AB, AC, AB ^ AC,
-5. Soit u, v et w les vecteurs unitaires de la base ((AB, AC, AB^AC)). Déduire leur expression.
-6. Calculer la matrice de transformation homogene T2 associée à cette base
-7.	 Trouver la matrice de transformation T1 entre le repère R1 ((AB, AC, AB^AC)) et le repère R0 du robot. En déduire la transformation homogène T01 entre R0 et R1.
-
-
-Comment utiliser les informations de la caméra pour amener le Tool vers un point spécifique ?
-Déterminer le gTc la transformation de la Caméra dans le repère Tool 
-Sachant :
-
-```
-bTw  = gTf* fTb* bTw
-bTw  = gTc* cTw
-gTc  = gTf* fTb* bTw*inv(cTw)
-```
-
-Déduire la transformation qui permet de d’exprimer tout point du repère camera dans le repère base du robot 
-
+3. Calculer les vecteurs AB, AC, AB ^ AC,
+4. Soit u, v et w les vecteurs unitaires de la base ((AB, AC, AB^AC)). Déduire leur expression.
+5.	 Trouver la matrice de transformation  entre le repère R1 ((AB, AC, AB^AC)) et le repère R0 du robot. En déduire la transformation homogène T01 entre R0 et R1.
 
 
 ## Materiels
