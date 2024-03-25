@@ -2,13 +2,15 @@
 ## Introduction
 
 Détermination de bTw
-Soit un R1 une base associée à une palette. Soit R0, le repère associé au robot.  
+Soit un R1 une base associée à une palette. Soit R0, le repère associé au robot. 
+
+![Matrice](./Imgs/rotxyz.png)
 
 1. Exprimer la matrice de transformation homogene `Trobot` du robot à partir de ses coordonnées `(x,y,z,a,b,c)` dans l'espace[ ](http://web.mit.edu/2.05/www/Handout/HO2.PDF)
-   
+
    ``` pyuthon
    Trobot= f(x,y,z,a,b,c)
-   ``
+   ```  
    
 3.	Définir trois points A, B et C tels que ABC soit un trièdre rectangle direct (AB, AC, AB^AC) soit une base directe.
    AB = X(base), AC = Y(base)
