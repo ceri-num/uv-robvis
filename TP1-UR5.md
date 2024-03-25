@@ -76,7 +76,7 @@ cTw  est la transformation du World dans le repère Camera
 Détermination de bTw
 Soit un R1 une base associée à la mire de calibration. Soit R0, le repère associé au robot.  
 
-1.	Définir trois points A, B et tels que ABC soit un trièdre rectangle direct (AB, AC, AB^AC) soit une base directe.
+1.	Définir trois points A, B et C tels que ABC soit un trièdre rectangle direct (AB, AC, AB^AC) soit une base directe.
 2.	 Trouver la matrice de transformation entre le repère R1 ((AB, AC, AB^AC)) et le repère R0 du robot. En déduire la transformation homogène T01 entre R0 et R1.
 
 
