@@ -24,8 +24,8 @@ structure des packages ros2
 
 ``` python
 ros2_ws/
-    	robot/ 
-          src/
+    	robot/
+        src/
     			kuka(intégration) (détection, localisation, trajectoire et prise) 	
     	vision/	
     		src/
