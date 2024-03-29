@@ -22,18 +22,20 @@ Les phases du projet seront les suivantes :
 # Livrable 
 structure des packages ros2
 
+
 ``` python
 ros2_ws/
-    	robot/
-        src/
-    			kuka(intégration) (détection, localisation, trajectoire et prise) 	
-    	vision/	
-    		src/
-    			realsense1 fixe( integration) 
-    			realsense2 mobile(integration)
-    	database/
-    		src/
-    			sqldatabase
+      robot/ 
+      		src/
+      			kuka(integration) (detection, localisation, trajectoire et prise) 
+      	vision/	
+      		src/
+      			realsense1 fixe( integration) 
+      			realsense2 mobile(integration)
+      	database/
+      		src/
+      			sqldatabase
+	
 
   ```
 
