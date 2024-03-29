@@ -7,6 +7,10 @@ structure:
   tp2-kuka: TP2-KUKA.md
   tp3-kuka_iiwa: TP3-KUKA_IIWA.md
   tp4-ABB_YUMI: TP4-ABB_YUMI.md
+  projet1: Projet1.md
+  projet2: Projet2.md
+  projet3: Projet3.md
+  projet4: Projet4.md
 
 redirects:
   previous/page: new-folder/page.md
